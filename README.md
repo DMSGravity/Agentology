@@ -1,67 +1,45 @@
-## Disclaimer, this project is nearly fully agentic-thus the programs name- I've kept the source private cause this is a hobby for me; I needed to talk to my local agent, and the other tools had too much friction for me to deal with. [[LM Studio for Copilot Chat](https://github.com/yoy123/lmstudio-copilot-provider)] worked, but the context window widget didn't work and I thought "I can just use Ai to fix this." little did I know what I was in for. Below is agent text, I've head it read my depo but you know how they go; if you have bugs or anything else, feel free to post them here however, please try to be concise and clear- I cannot just "figure out" bugs and asks like a trained coder can. 
-```markdown
-# Agentology for VS Code — Feedback & Issue Tracker
+# Agentology for VS Code
 
-Welcome to the public issue tracker and feedback repository for **Agentology for VS Code** (LM Studio integration for VS Code & Copilot Chat).
+> High-performance, LM Studio provider & autonomous agent runtime for VS Code and Copilot Chat.
 
-Use this repository to report bugs, request features, or share feedback.
+[![GitHub Discussions](https://img.shields.io/badge/Community-Discussions-green.svg)](https://github.com/DMSGravity/Agentology/discussions)
 
 ---
 
-##  Features at a Glance
+## 📖 About Agentology
 
-Agentology is an advanced, high-performance Language Model Provider and Autonomous Agent runtime connecting your local **LM Studio** models directly into VS Code Copilot and the VS Code Agents Window.
+**Agentology for VS Code** bridges your local [LM Studio](https://lmstudio.ai/) models directly into VS Code Copilot Chat. 
 
-###  100% Local & Private
-- **Zero Cloud Leakage**: Keep your code, prompts, and tokens entirely on your local machine.
-- **No Surprise API Bills**: Closed subagent delegation prevents background tasks from secretly routing to paid cloud APIs (Claude/OpenAI).
-
-###  Deep Tool & MCP Execution
-- **Dynamic MCP Discovery**: Automatically discovers and forwards 100% of all registered workspace and MCP tools (including Jupyter notebook execution: `run_notebook_cell`, `execute_cell`, `read_notebook`).
-- **Autonomous Multi-Turn Tool Loop**: Use `@agentology` in the Chat View to run autonomous reasoning, terminal commands, file edits, and tool executions in a single session.
-- **Surgical Parameter Bridging**: Automatically normalizes open-weight model parameter variations (`file_path` $\to$ `filePath`, `old_string` $\to$ `oldString`).
-
-###  Real-Time Context & Token Synchronization
-- **Live VRAM Context Sync**: Dynamically mirrors your loaded LM Studio KV-cache window (up to 262k tokens) to VS Code using a 4-tier source-of-truth hierarchy.
-- **Zero-Latency Token Estimator**: Sub-millisecond BPE approximation eliminates socket freezing and connection drops during heavy inference.
-- **Automatic Budget Split**: Reserves 25% output headroom to prevent context window overflow truncation.
-
-###  Native Custom Agents & Dynamic Subagents
-- **`LocalAgent` Coordinator**: Use the `Local` session target in the Agents Window or Chat view with native delegation to specialized local subagents (`LocalResearcher`, `LocalCoder`, `LocalPlanner`).
-- **Pure Dynamic Inheritance**: Automatically inherits whichever model you have loaded in LM Studio without requiring hardcoded configuration.
-
-###  Multimodal & Architecture Support
-- **Vision (Image Input)**: Full support for multimodal vision models (e.g. Qwen-VL, Pixtral, LLaVA).
-- **Dynamic Model Families**: Automatically detects and maps `qwen`, `llama`, `deepseek`, `mistral`, `gemma`, `phi`, and `gpt-4o` architectures.
+Built specifically for developers who want a seamless, air-gapped, zero-cost coding assistant, Agentology provides native multi-turn tool execution, full Model Context Protocol (MCP) tool forwarding, dynamic contexta budgeting, and closed local subagent orchestration.
 
 ---
 
-##  Quick Setup
+## ✨ Key Capabilities
 
-1. **Start LM Studio**:
-   - Open LM Studio and start the Local Server (default: `http://localhost:1234`).
-   - Load your preferred model (e.g., Qwen 2.5 Coder 32B, Llama 3.3 70B, DeepSeek-Coder).
-2. **Open VS Code**:
-   - Install **Agentology for VS Code**.
-   - In VS Code Copilot Chat (`Ctrl+Alt+I` / `Cmd+Alt+I`), select your loaded LM Studio model from the model picker.
-   - Type `@agentology` to run autonomous tasks with full MCP and workspace tools.
+- ⚡ **Full MCP & Workspace Forwarding**: Discovers and runs 100% of registered workspace and MCP tools.
+- 🧠 **Live Context Sync**: Dynamically reports your loaded LM Studio KV-cache window to VS Code via a 4-tier source-of-truth hierarchy with low-latency BPE token estimation (`chars / 3.65`).
+- 🤖 **Closed Subagent Delegation**: Native `LocalAgent` custom coordinator with pure dynamic model inheritance, strictly preventing background tasks from escaping to paid cloud APIs.
+- 👁️ **Multimodal Vision & Multi-Family**: Out-of-the-box support for vision models (`imageInput: isVision`) and dynamic architecture detection (`qwen`, `llama`, `deepseek`, `mistral`, `gemma`, `phi`, `gpt-4o`).
 
 ---
 
-##  How to Report Bugs
+## 💬 Discussions & Bug Reports
 
-When opening an issue, please provide:
-1. **Operating System**: (Windows / macOS / Linux)
-2. **LM Studio Version & Model Name**: (e.g., `LM Studio v0.3.x`, `Qwen/Qwen2.5-Coder-32B-Instruct-GGUF`)
-3. **Context Length Configured in LM Studio**: (e.g., `32,768` or `131,072`)
-4. **Relevant Output Channel Logs**:
-   - Open the **Output** panel in VS Code (`Ctrl+Shift+U` / `Cmd+Shift+U`).
-   - Select **"LM Studio"** from the dropdown and paste the relevant log snippet.
-5. **Steps to Reproduce**: Detailed description of what prompt or tool caused the issue.
+This repository serves as the official community feedback hub, discussion forum, and issue tracker for Agentology:
+
+- **Ask Questions & Share Setups**: Join our [GitHub Discussions](https://github.com/DMSGravity/Agentology/discussions) to share recommended model quants, GPU settings, and workflows.
+- **Report Bugs**: If you encounter an issue with tool calls or model compatibility, please [open an Issue](https://github.com/DMSGravity/Agentology/issues) with your OS, LM Studio model name, and relevant VS Code output channel logs.
 
 ---
 
-## 📜 License
-Agentology for VS Code is distributed under the [MIT License](LICENSE).
-```
+## 📜 Acknowledgements & Upstream Attribution
 
+Agentology originated as a hard fork of the open-source MIT-licensed project [LM Studio for Copilot Chat](https://github.com/yoy123/lmstudio-copilot-provider) by `@yoy123`.
+
+While the codebase has been substantially refactored and re-engineered with an autonomous multi-turn MCP runtime, custom subagent architecture, and dynamic VRAM context synchronization, we gratefully acknowledge and preserve the foundational contributions of the original project under the terms of the MIT License.
+
+---
+
+## 📄 License
+
+Agentology for VS Code is licensed under the [Proprietary License](LICENSE, see LICENSE file and Notice for details).
