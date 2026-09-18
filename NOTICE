@@ -1,0 +1,97 @@
+Third-Party Notices
+
+This project contains material derived from lmstudio-copilot-provider.
+
+Upstream material is used under the MIT License:
+
+Copyright (c) 2024 yoy123
+
+The MIT License applies to upstream scaffolding derived from
+lmstudio-copilot-provider contained in the following files, including
+modified versions of that material:
+
+  src/extension.ts
+  src/lmstudio-provider.ts
+  src/lmstudio-client.ts
+  src/tools/terminal-tool.ts
+  src/tools/index.ts
+
+The full MIT License text appears below.
+
+Original copyrightable code, documentation, assets, and other material
+authored by Abraham Lowrey, including original modifications and additions
+to the files listed above, are subject to the Agentology Non-Commercial
+License. That license does not limit, revoke, or restrict rights granted
+under the MIT License for upstream material.
+
+The following modules are identified as containing only original Agentology
+Materials, subject to any applicable third-party dependencies:
+
+  src/lms-tokenizer.ts
+  src/context-budget.ts
+  src/lms-websocket-adapter.ts
+  src/openai-chat-adapter.ts
+  src/canonical-types.ts
+  src/types.ts
+  src/logger.ts
+  src/tools/file-tools.ts
+  src/tools/image-tool.ts
+  src/tools/codebase-index-tool.ts
+  test/
+
+This project communicates with the LM Studio product through publicly
+documented HTTP and WebSocket RPC APIs. It does not include LM Studio source code or grant
+rights to LM Studio trademarks or other proprietary materials.
+
+The audit below is a provenance and authorship analysis. It does not modify
+or supersede any applicable third-party license.
+
+
+# Agentic Audit:
+
+### 2. Exact Numerical Breakdown by Subsystem
+
+| File / Component                     | Total Lines | Lines from Upstream | Original Agentology Lines 
+|---|---|---|---|
+| `src/lms-tokenizer.ts`               | 343         | **0**               | 343              
+| `src/context-budget.ts`              | 58          | **0**               | 58             
+| `src/lms-websocket-adapter.ts`       | 654         | **0**               | 654            
+| `src/openai-chat-adapter.ts`         | 140         | **0**               | 140            
+| `src/canonical-types.ts`             | 57          | **0**               | 57             
+| `src/types.ts`                       | 231         | **0**               | 231            
+| `src/logger.ts`                      | 200         | **0**               | 200            
+| `src/tools/file-tools.ts`            | 223         | **0**               | 223            
+| `src/tools/image-tool.ts`            | 651         | **0**               | 651            
+| `src/tools/codebase-index-tool.ts`   | 311         | **0**               | 311            
+| `test/` (All 6 test suites)          | 1,220       | **0**               | 1,220          
+| `src/lmstudio-provider.ts`           | 1,556       | ~120                | 1,436          
+| `src/lmstudio-client.ts`             | 1,233       | ~130                | 1,103          
+| `src/tools/terminal-tool.ts`         | 312         | ~35                 | 277            
+| `src/extension.ts`                   | 376         | ~45                 | 331            
+| `src/tools/index.ts`                 | 59          | ~10                 | 49             
+| **Totals**                           | **7,564 lines** | **~340 lines**  | **~7,224 lines** 
+
+
+
+
+# MIT License
+
+Copyright (c) 2024 yoy123
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
